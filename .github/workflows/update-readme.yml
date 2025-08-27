@@ -1,9 +1,11 @@
 name: Update README via Gemini
 
 on:
+  workflow_call:
   push:
     branches:
       - main
+      - develop
 
 jobs:
   update-readme:
