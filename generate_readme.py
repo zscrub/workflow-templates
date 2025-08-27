@@ -12,7 +12,7 @@ try:
 
 # Collect context from key files (limit size to avoid token overrun)
         context_files = []
-        for ext in [".sh", ".py", ".md"]:
+        for ext in [".sh", ".py", ".yml", ".yaml", ".md"]:
             for file_path in Path(".").rglob(f"*{ext}"):
                 if file_path.name.lower() != "readme.md" and file_path.stat().st_size < 5000:
                     context_files.append(f"--- {file_path} ---\n{file_path.read_text(encoding='utf-8', errors='ignore')}\n")
